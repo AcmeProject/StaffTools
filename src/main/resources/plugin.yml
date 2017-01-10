@@ -1,0 +1,6 @@
+name: StaffTools
+version: 0.1
+author: LaxWasHere
+main: net.poweredbyhate.stafftools.StaffTools
+commands:
+  dm:
