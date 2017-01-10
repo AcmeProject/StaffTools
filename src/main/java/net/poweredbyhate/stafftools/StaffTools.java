@@ -34,7 +34,9 @@ public class StaffTools extends JavaPlugin implements Listener {
         if (p.hasPermission("stafftools.staffchat") && staffers.contains(p.getUniqueId())) {
             ev.setCancelled(true);
             for (Player x : Bukkit.getOnlinePlayers()) {
-                x.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("scformat").replace("{PLAYER}", p.getName()).replace("{MESSAGE}", ev.getMessage()) ));
+                if (x.hasPermission("stafftools.staffchat")) {
+                    x.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("scformat").replace("{PLAYER}", p.getName()).replace("{MESSAGE}", ev.getMessage())));
+                }
             }
         }
     }
